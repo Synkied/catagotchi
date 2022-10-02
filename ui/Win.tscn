@@ -1,0 +1,337 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://ui/EndScreen.gd" type="Script" id=1]
+[ext_resource path="res://assets/Stilu-Regular.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://assets/bullet_blue_magic.png" type="Texture" id=3]
+[ext_resource path="res://assets/bullet_yellow.png" type="Texture" id=4]
+
+[sub_resource type="DynamicFont" id=8]
+size = 64
+outline_size = 2
+outline_color = Color( 0.682353, 0.215686, 0.556863, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=5]
+default_font = SubResource( 6 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=7]
+default_font = SubResource( 4 )
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBox/HBox/Super:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 260 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("VBox/HBox/Shot:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 514, -100 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Bullet1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1112, 362 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Bullet2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -81, 218 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "appear"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBox/HBox/Super:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 8.00001, 1 ),
+"update": 0,
+"values": [ Vector2( -550, 260 ), Vector2( 0, 260 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("VBox/HBox/Shot:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 32, 1 ),
+"update": 0,
+"values": [ Vector2( 514, -100 ), Vector2( 514, 260 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "bullets"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bullet1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1112, 362 ), Vector2( -87, 362 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Bullet2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -81, 218 ), Vector2( 1139, 218 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBox/HBox/Super:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 260 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("VBox/HBox/Shot:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 514, -100 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Bullet1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1112, 362 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Bullet2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -81, 218 ) ]
+}
+
+[sub_resource type="Animation" id=13]
+resource_name = "appear"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("VBox/HBox/Super:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 8.00001, 1 ),
+"update": 0,
+"values": [ Vector2( -550, 260 ), Vector2( 0, 260 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("VBox/HBox/Shot:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 32, 1 ),
+"update": 0,
+"values": [ Vector2( 514, -100 ), Vector2( 514, 260 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "bullets"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bullet1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1112, 362 ), Vector2( -87, 362 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Bullet2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -81, 218 ), Vector2( 1648, 218 ) ]
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0745098, 0.0588235, 0.054902, 1 )
+
+[node name="VBox" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -512.0
+margin_right = 512.0
+margin_bottom = 600.0
+alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="VBox"]
+margin_right = 1024.0
+margin_bottom = 600.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 50
+
+[node name="Super" type="Label" parent="VBox/HBox"]
+margin_top = 260.0
+margin_right = 487.0
+margin_bottom = 340.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 8 )
+text = "YOU'RE"
+align = 2
+uppercase = true
+
+[node name="Shot" type="Label" parent="VBox/HBox"]
+margin_left = 514.0
+margin_top = -100.0
+margin_right = 1001.0
+margin_bottom = -20.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 8 )
+text = "AMAZING"
+autowrap = true
+
+[node name="Version" type="Label" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -30.0
+margin_right = 52.0
+margin_bottom = -10.0
+size_flags_horizontal = 3
+theme = SubResource( 5 )
+text = "alpha"
+valign = 2
+
+[node name="HighScore" type="Label" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 1024.0
+margin_bottom = 20.0
+size_flags_horizontal = 3
+theme = SubResource( 7 )
+text = "Levels beaten: "
+valign = 2
+
+[node name="Button" type="Button" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = 55.0
+margin_bottom = 115.0
+text = "Restart"
+flat = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -20.0
+
+[node name="TextAnimation" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 9 )
+anims/appear = SubResource( 10 )
+anims/bullets = SubResource( 11 )
+
+[node name="BulletAnimation" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 12 )
+anims/appear = SubResource( 13 )
+anims/bullets = SubResource( 14 )
+
+[node name="Bullet1" type="Sprite" parent="."]
+position = Vector2( 1112, 362 )
+rotation = -3.14159
+texture = ExtResource( 4 )
+
+[node name="Bullet2" type="Sprite" parent="."]
+position = Vector2( -81, 218 )
+texture = ExtResource( 3 )
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

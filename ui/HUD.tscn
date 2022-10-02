@@ -1,0 +1,112 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://ui/HUD.gd" type="Script" id=1]
+[ext_resource path="res://assets/Stilu-SemiBold.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://ui/main_theme.tres" type="Theme" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 73.0 ]
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
+
+[node name="Message" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = SubResource( 2 )
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="MessageTween" type="Tween" parent="."]
+
+[node name="MessageTimer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Label" type="Label" parent="."]
+margin_left = 27.0
+margin_top = 28.0
+margin_right = 67.0
+margin_bottom = 42.0
+theme = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="SleepBar" type="ProgressBar" parent="."]
+margin_left = 915.0
+margin_top = 53.0
+margin_right = 965.0
+margin_bottom = 73.0
+max_value = 10.0
+step = 1.0
+value = 5.0
+rounded = true
+percent_visible = false
+
+[node name="SleepText" type="Label" parent="SleepBar"]
+margin_left = -4.0
+margin_top = -34.0
+margin_right = 51.0
+margin_bottom = -20.0
+theme = ExtResource( 3 )
+text = "Sleep"
+align = 1
+
+[node name="PlayBar" type="ProgressBar" parent="."]
+margin_left = 821.0
+margin_top = 54.0
+margin_right = 871.0
+margin_bottom = 74.0
+max_value = 10.0
+step = 1.0
+value = 5.0
+rounded = true
+percent_visible = false
+
+[node name="PlayText" type="Label" parent="PlayBar"]
+margin_top = -35.0
+margin_right = 48.0
+margin_bottom = -15.0
+theme = ExtResource( 3 )
+text = "Play"
+align = 1
+
+[node name="HungerBar" type="ProgressBar" parent="."]
+margin_left = 713.0
+margin_top = 54.0
+margin_right = 762.0
+margin_bottom = 74.0
+max_value = 10.0
+step = 1.0
+value = 5.0
+rounded = true
+allow_greater = true
+percent_visible = false
+
+[node name="Hungryness" type="Label" parent="HungerBar"]
+margin_left = -8.0
+margin_top = -35.0
+margin_right = 59.0
+margin_bottom = -15.0
+theme = ExtResource( 3 )
+text = "Hunger"
+align = 1
+
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
+[connection signal="tween_completed" from="MessageTween" to="." method="_on_MessageTween_tween_completed"]
+[connection signal="timeout" from="MessageTimer" to="." method="_on_MessageTimer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

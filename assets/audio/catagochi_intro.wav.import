@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/catagochi_intro.wav-f24299b0c544296ca66d2a2adb4997e5.sample"
+
+[deps]
+
+source_file="res://assets/audio/catagochi_intro.wav"
+dest_files=[ "res://.import/catagochi_intro.wav-f24299b0c544296ca66d2a2adb4997e5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
