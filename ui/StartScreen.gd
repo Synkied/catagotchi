@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 # Variables
-var intro_music = preload("res://assets/audio/catagochi_intro_2.wav")
+var intro_music = preload("res://assets/audio/catagochi_intro.wav")
 
 func _ready():
 	play_music()
